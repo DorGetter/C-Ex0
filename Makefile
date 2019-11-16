@@ -2,6 +2,7 @@ CC     = gcc
 CFLAGS = -I.
 OBJ    = power.o basicMath.o
 DEPSM  = maind mains
+DEPS   = myMath.h
 
 all:     mains maind
 mymathd: libmymathd.os
@@ -19,7 +20,7 @@ main.o: main.c
 	$(CC)  -Wall -c -o $@ $^ $(CFLAGS) 
 
 	
-%.o : %.c 
+%.o : %.c $(DEPS)
 	$(CC) -Wall -fPIC -c $^
 
 
@@ -30,5 +31,5 @@ libmyMaths.a: $(OBJ)
 	ar rcs $@ $^
 
 clean: 
-	rm *.o *.a *.so maind mains
+	rm *.o *.a *.so maind mains *.h.gch
  
