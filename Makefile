@@ -2,7 +2,6 @@ CC     = gcc
 CFLAGS = -I.
 OBJ    = power.o basicMath.o
 DEPSM  = maind mains
-DEPS   = myMath.h
 
 all:     mains maind
 mymathd: libmymathd.os
